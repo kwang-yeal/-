@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✈️ 김포→제주 좌석 모니터</title>
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --surface2: #22253a;
+    --border: #2e3150; --accent: #4f6ef7; --green: #22c55e;
+    --red: #ef4444; --yellow: #eab308;
+    --text: #e2e8f0; --text2: #94a3b8; --text3: #64748b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Segoe UI', sans-serif; min-height: 100vh; }
+
+  .header {
+    background: #16192b; border-bottom: 1px solid var(--border);
+    padding: 18px 24px; display: flex; align-items: center; gap: 14px;
+  }
+  .header h1 { font-size: 18px; font-weight: 700; }
+  .header p { font-size: 12px; color: var(--text2); margin-top: 2px; }
+  .gh-badge {
+    margin-left: auto; background: rgba(79,110,247,0.15);
+    border: 1px solid rgba(79,110,247,0.3); color: #818cf8;
+    padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;
+  }
+
+  .info-bar {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 10px 24px; display: flex; align-items: center; gap: 16px; font-size: 12px;
+  }
+  .updated { color: var(--text2); }
+  .updated strong { color: var(--text); }
+  .auto-refresh { margin-left: auto; color: var(--text3); }
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); margin-right: 5px; animation: blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* 날짜 탭 */
+  .date-tabs {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 0 24px; display: flex; gap: 0; overflow-x: auto;
+  }
+  .date-tab {
+    padding: 11px 16px; font-size: 13px; font-weight: 600; cursor: pointer;
+    border-bottom: 2px solid transparent; color: var(--text2);
+    white-space: nowrap; transition: all 0.2s; position: relative;
+  }
+  .date-tab:hover { color: var(--text); }
+  .date-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .date-tab .avail-cnt {
+    display: inline-block; background: rgba(34,197,94,0.2); color: #86efac;
+    font-size: 10px; padding: 1px 6px; border-radius: 10px; margin-left: 5px;
+  }
+
+  .main { padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
+
+  /* 알림 배너 */
+  .alert-banner {
+    background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+    border-radius: 10px; padding: 12px 16px; display: none;
+    align-items: center; gap: 10px; font-size: 13px; color: #86efac;
+  }
+  .alert-banner.show { display: flex; }
+
+  /* 항공사 섹션 */
+  .airline-section { display: flex; flex-direction: column; gap: 10px; }
+  .airline-header {
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    width: 34px; height: 34px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff;
+  }
+  .logo-lj { background: linear-gradient(135deg,#00408c,#0066cc); }
+  .logo-jc { background: linear-gradient(135deg,#ff6b00,#ff9500); }
+  .logo-tw { background: linear-gradient(135deg,#cc0000,#ff3333); }
+  .airline-name { font-size: 15px; font-weight: 700; }
+  .airline-st { margin-left: auto; font-size: 12px; color: var(--text3); }
+  .airline-st.ok { color: var(--green); }
+  .airline-st.err { color: var(--red); }
+
+  .flights-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(185px,1fr)); gap: 10px; }
+  .flight-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 13px; cursor: pointer;
+    transition: all 0.2s; position: relative;
+  }
+  .flight-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .flight-card.avail { border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.04); }
+  .flight-card.sold { opacity: 0.4; }
+  .avail-dot {
+    position: absolute; top: 9px; right: 9px;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--green); animation: blink 1.5s infinite;
+  }
+  .flight-no { font-size: 11px; font-weight: 700; color: var(--text3); margin-bottom: 6px; }
+  .flight-time { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+  .flight-time span { color: var(--text3); font-size: 13px; font-weight: 400; margin: 0 4px; }
+  .flight-price { margin-top: 6px; font-size: 14px; font-weight: 700; color: var(--accent); }
+  .seat-badge {
+    display: inline-block; margin-top: 5px; padding: 2px 8px;
+    border-radius: 20px; font-size: 11px; font-weight: 700;
+  }
+  .seat-ok { background: rgba(34,197,94,0.15); color: #86efac; }
+  .seat-few { background: rgba(234,179,8,0.15); color: #fde047; }
+  .seat-no { background: rgba(239,68,68,0.1); color: #fca5a5; }
+
+  .no-data {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; text-align: center; color: var(--text3); font-size: 13px;
+  }
+  .fallback {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px;
+    display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--text2);
+  }
+  .fallback a {
+    margin-left: auto; color: var(--accent); text-decoration: none;
+    background: rgba(79,110,247,0.1); border: 1px solid rgba(79,110,247,0.2);
+    padding: 5px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; white-space: nowrap;
+  }
+
+  .loading {
+    text-align: center; padding: 60px 24px; color: var(--text3);
+  }
+  .loading::after {
+    content: ''; display: block; width: 32px; height: 32px;
+    border: 3px solid var(--border); border-top-color: var(--accent);
+    border-radius: 50%; margin: 16px auto 0; animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-box {
+    background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 10px; padding: 20px; text-align: center; color: #fca5a5; font-size: 13px;
+  }
+
+  /* 알림 설정 */
+  .notif-btn {
+    background: rgba(79,110,247,0.15); border: 1px solid rgba(79,110,247,0.3);
+    color: #818cf8; padding: 5px 12px; border-radius: 8px; font-size: 12px;
+    cursor: pointer; font-weight: 600; margin-left: auto;
+  }
+
+  footer {
+    text-align: center; padding: 24px; color: var(--text3); font-size: 12px;
+    border-top: 1px solid var(--border); margin-top: 20px;
+  }
+  footer a { color: var(--text2); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span style="font-size:26px">✈️</span>
+  <div>
+    <h1>김포 → 제주 좌석 모니터</h1>
+    <p>GitHub Actions 자동 조회 · 매 5분 업데이트</p>
+  </div>
+  <div class="gh-badge">🤖 GitHub Actions</div>
+</div>
+
+<div class="info-bar">
+  <span class="updated">마지막 업데이트: <strong id="updatedAt">로딩 중...</strong></span>
+  <span id="alertCount" style="display:none; color:var(--green)"></span>
+  <button class="notif-btn" onclick="requestNotif()">🔔 알림 받기</button>
+  <span class="auto-refresh"><span class="dot"></span>자동 새로고침 중</span>
+</div>
+
+<div class="date-tabs" id="dateTabs"></div>
+
+<div class="main" id="main">
+  <div class="loading">데이터 로딩 중...</div>
+</div>
+
+<footer>
+  데이터는 <a href="data/flights.json" target="_blank">flights.json</a>에서 가져옵니다 ·
+  GitHub Actions가 5분마다 자동 업데이트
+</footer>
+
+<script>
+let currentDate = null;
+let flightData = null;
+let previousAvailKeys = new Set(JSON.parse(localStorage.getItem('availKeys') || '[]'));
+
+async function loadData() {
+  try {
+    const r = await fetch(`data/flights.json?t=${Date.now()}`);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    flightData = await r.json();
+    render();
+  } catch(e) {
+    document.getElementById('main').innerHTML = `
+      <div class="error-box">
+        ⚠️ 데이터 로드 실패: ${e.message}<br>
+        <small style="margin-top:8px;display:block">GitHub Actions가 아직 실행되지 않았거나 data/flights.json 파일이 없습니다.</small>
+      </div>`;
+  }
+}
+
+function render() {
+  if (!flightData) return;
+
+  // 업데이트 시각
+  document.getElementById('updatedAt').textContent = flightData.updatedAt + ' KST';
+
+  // 날짜 탭 생성
+  const dates = [...new Set(flightData.results.map(r => r.date))];
+  if (!currentDate || !dates.includes(currentDate)) currentDate = dates[0];
+
+  const tabsEl = document.getElementById('dateTabs');
+  tabsEl.innerHTML = dates.map(d => {
+    const results = flightData.results.filter(r => r.date === d);
+    const availCount = results.reduce((sum, r) => sum + (r.flights||[]).filter(f=>f.available).length, 0);
+    const formatted = `${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6)}`;
+    return `<div class="date-tab ${d===currentDate?'active':''}" onclick="selectDate('${d}')">
+      ${formatted}
+      ${availCount > 0 ? `<span class="avail-cnt">${availCount}</span>` : ''}
+    </div>`;
+  }).join('');
+
+  // 현재 날짜 결과 렌더
+  renderDate(currentDate);
+
+  // 잔여석 알림 체크
+  checkNewAvail();
+}
+
+function selectDate(date) {
+  currentDate = date;
+  render();
+}
+
+function renderDate(date) {
+  const results = flightData.results.filter(r => r.date === date);
+  const main = document.getElementById('main');
+
+  if (!results.length) {
+    main.innerHTML = `<div class="no-data">해당 날짜 데이터가 없습니다.</div>`;
+    return;
+  }
+
+  const logos = { jinair: 'logo-lj', jejuair: 'logo-jc', tway: 'logo-tw' };
+  const codes = { jinair: 'LJ', jejuair: '7C', tway: 'TW' };
+
+  main.innerHTML = results.map(r => {
+    const avail = (r.flights||[]).filter(f=>f.available).length;
+    const hasError = !!r.error;
+    const logoClass = logos[r.airline] || 'logo-lj';
+    const code = codes[r.airline] || '?';
+
+    let content = '';
+    if (r.fallbackUrl && !(r.flights||[]).length) {
+      content = `<div class="fallback">
+        <span>⚠️ ${r.note || '직접 조회 불가'}</span>
+        <a href="${r.fallbackUrl}" target="_blank">예매 페이지 열기 →</a>
+      </div>`;
+    } else if (hasError && !(r.flights||[]).length) {
+      content = `<div class="no-data">⚠️ 오류: ${r.error}</div>`;
+    } else if (!(r.flights||[]).length) {
+      content = `<div class="no-data">항공편 없음</div>`;
+    } else {
+      content = `<div class="flights-grid">${(r.flights||[]).map(f => flightCard(r.airline, f, date)).join('')}</div>`;
+    }
+
+    return `<div class="airline-section">
+      <div class="airline-header">
+        <div class="logo ${logoClass}">${code}</div>
+        <span class="airline-name">${r.name}</span>
+        <span class="airline-st ${avail>0?'ok':hasError?'err':''}">
+          ${hasError && !r.flights?.length ? '⚠️ 오류' : avail > 0 ? `✅ ${avail}편 잔여` : '✗ 잔여 없음'}
+        </span>
+      </div>
+      ${content}
+    </div>`;
+  }).join('');
+
+  // 총 잔여편수
+  const total = results.reduce((s,r)=>s+(r.flights||[]).filter(f=>f.available).length,0);
+  const cnt = document.getElementById('alertCount');
+  if (total > 0) {
+    cnt.textContent = `🎉 ${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6)} 잔여석 ${total}편`;
+    cnt.style.display = 'inline';
+  } else {
+    cnt.style.display = 'none';
+  }
+}
+
+function flightCard(airline, f, date) {
+  const key = `${airline}-${f.flightNo}-${date}`;
+  const seatLabel = f.available ? `${f.seats}석` : '매진';
+  const seatCls = !f.available ? 'no' : f.seats <= 3 ? 'few' : 'ok';
+  return `<div class="flight-card ${f.available?'avail':'sold'}" onclick="window.open('${f.bookingUrl}','_blank')">
+    ${f.available ? '<div class="avail-dot"></div>' : ''}
+    <div class="flight-no">${f.flightNo||''}</div>
+    <div class="flight-time">${f.depTime||'--:--'}<span>→</span>${f.arrTime||'--:--'}</div>
+    ${f.price ? `<div class="flight-price">₩${Number(f.price).toLocaleString()}</div>` : ''}
+    <div class="seat-badge seat-${seatCls}">${seatLabel}</div>
+  </div>`;
+}
+
+function checkNewAvail() {
+  if (!flightData) return;
+  const currentKeys = new Set();
+  const newOnes = [];
+
+  flightData.results.forEach(r => {
+    (r.flights||[]).filter(f=>f.available).forEach(f => {
+      const key = `${r.airline}-${f.flightNo}-${r.date}`;
+      currentKeys.add(key);
+      if (!previousAvailKeys.has(key)) {
+        newOnes.push(`${r.name} ${f.flightNo} (${r.date.slice(4,6)}/${r.date.slice(6)}) ${f.depTime}`);
+      }
+    });
+  });
+
+  if (newOnes.length > 0 && Notification.permission === 'granted') {
+    new Notification('✈️ 새 잔여석 발견!', { body: newOnes.join('\n') });
+    beep();
+  }
+
+  previousAvailKeys = currentKeys;
+  localStorage.setItem('availKeys', JSON.stringify([...currentKeys]));
+}
+
+function beep() {
+  try {
+    const ac = new (window.AudioContext || window.webkitAudioContext)();
+    [523,659,784].forEach((freq,i) => {
+      const o = ac.createOscillator(), g = ac.createGain();
+      o.connect(g); g.connect(ac.destination);
+      o.frequency.value = freq; o.type = 'sine';
+      const t = ac.currentTime + i*0.15;
+      g.gain.setValueAtTime(0.3,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.3);
+      o.start(t); o.stop(t+0.3);
+    });
+  } catch(e) {}
+}
+
+function requestNotif() {
+  Notification.requestPermission().then(p => {
+    if (p === 'granted') alert('✅ 알림이 허용되었습니다!\n새 잔여석이 발견되면 알림을 받습니다.');
+    else alert('알림 권한이 거부되었습니다.\n브라우저 설정에서 허용해주세요.');
+  });
+}
+
+// 초기 로드 + 30초마다 자동 새로고침
+loadData();
+setInterval(loadData, 30_000);
+</script>
+</body>
+</html>
