@@ -1,1 +1,162 @@
-{"updatedAt":"아직 데이터 없음","results":[]}
+{
+  "updatedAt": "2026-04-28 18:27:44",
+  "targetDates": [
+    "20260429",
+    "20260430",
+    "20260501",
+    "20260502",
+    "20260503",
+    "20260504",
+    "20260505"
+  ],
+  "adultCount": 1,
+  "results": [
+    {
+      "airline": "jinair",
+      "name": "진에어",
+      "date": "20260429",
+      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "flights": []
+    },
+    {
+      "airline": "jejuair",
+      "name": "제주항공",
+      "date": "20260429",
+      "flights": []
+    },
+    {
+      "airline": "tway",
+      "name": "티웨이",
+      "date": "20260429",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260429&paxType=ADT&paxCount=1",
+      "flights": [],
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260429&paxType=ADT&paxCount=1"
+    },
+    {
+      "airline": "jinair",
+      "name": "진에어",
+      "date": "20260430",
+      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "flights": []
+    },
+    {
+      "airline": "jejuair",
+      "name": "제주항공",
+      "date": "20260430",
+      "flights": []
+    },
+    {
+      "airline": "tway",
+      "name": "티웨이",
+      "date": "20260430",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260430&paxType=ADT&paxCount=1",
+      "flights": [],
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260430&paxType=ADT&paxCount=1"
+    },
+    {
+      "airline": "jinair",
+      "name": "진에어",
+      "date": "20260501",
+      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "flights": []
+    },
+    {
+      "airline": "jejuair",
+      "name": "제주항공",
+      "date": "20260501",
+      "flights": []
+    },
+    {
+      "airline": "tway",
+      "name": "티웨이",
+      "date": "20260501",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260501&paxType=ADT&paxCount=1",
+      "flights": [],
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260501&paxType=ADT&paxCount=1"
+    },
+    {
+      "airline": "jinair",
+      "name": "진에어",
+      "date": "20260502",
+      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "flights": []
+    },
+    {
+      "airline": "jejuair",
+      "name": "제주항공",
+      "date": "20260502",
+      "flights": []
+    },
+    {
+      "airline": "tway",
+      "name": "티웨이",
+      "date": "20260502",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260502&paxType=ADT&paxCount=1",
+      "flights": [],
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260502&paxType=ADT&paxCount=1"
+    },
+    {
+      "airline": "jinair",
+      "name": "진에어",
+      "date": "20260503",
+      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "flights": []
+    },
+    {
+      "airline": "jejuair",
+      "name": "제주항공",
+      "date": "20260503",
+      "flights": []
+    },
+    {
+      "airline": "tway",
+      "name": "티웨이",
+      "date": "20260503",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260503&paxType=ADT&paxCount=1",
+      "flights": [],
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260503&paxType=ADT&paxCount=1"
+    },
+    {
+      "airline": "jinair",
+      "name": "진에어",
+      "date": "20260504",
+      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "flights": []
+    },
+    {
+      "airline": "jejuair",
+      "name": "제주항공",
+      "date": "20260504",
+      "flights": []
+    },
+    {
+      "airline": "tway",
+      "name": "티웨이",
+      "date": "20260504",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260504&paxType=ADT&paxCount=1",
+      "flights": [],
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260504&paxType=ADT&paxCount=1"
+    },
+    {
+      "airline": "jinair",
+      "name": "진에어",
+      "date": "20260505",
+      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "flights": []
+    },
+    {
+      "airline": "jejuair",
+      "name": "제주항공",
+      "date": "20260505",
+      "flights": []
+    },
+    {
+      "airline": "tway",
+      "name": "티웨이",
+      "date": "20260505",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260505&paxType=ADT&paxCount=1",
+      "flights": [],
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260505&paxType=ADT&paxCount=1"
+    }
+  ]
+}
