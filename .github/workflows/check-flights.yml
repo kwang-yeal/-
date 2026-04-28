@@ -1,0 +1,26 @@
+name: 항공 좌석 조회
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 lxml
+      - run: python fetch_flights.py
+        env:
+          TARGET_DATES: ${{ vars.TARGET_DATES || '' }}
+          ADULT_COUNT: ${{ vars.ADULT_COUNT || '1' }}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/flights.json
+          git diff --staged --quiet || git commit -m "✈️ 좌석 업데이트"
+          git push
