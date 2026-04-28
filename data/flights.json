@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-28 18:27:44",
+  "updatedAt": "2026-04-28 18:46:24",
   "targetDates": [
     "20260429",
     "20260430",
@@ -10,6 +10,9 @@
     "20260505"
   ],
   "adultCount": 1,
+  "childCount": 0,
+  "depTimeFrom": "0000",
+  "depTimeTo": "2359",
   "results": [
     {
       "airline": "jinair",
