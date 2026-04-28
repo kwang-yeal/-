@@ -11,7 +11,7 @@
   .header h1 { font-size: 18px; font-weight: 700; }
   .header p { font-size: 12px; opacity: 0.85; margin-top: 2px; }
   .cf-badge { margin-left: auto; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
-  .config-panel { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 16px 24px; display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+  .config-panel { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
   .cg { display: flex; flex-direction: column; gap: 4px; }
   .cg label { font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
   .cg input, .cg select { background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b; padding: 7px 10px; border-radius: 8px; font-size: 13px; outline: none; }
@@ -24,17 +24,19 @@
   .btn-add { background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 7px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; font-weight: 600; }
   .time-range { display: flex; gap: 6px; align-items: center; }
   .time-range span { font-size: 12px; color: #94a3b8; }
-  .time-range input { width: 90px; }
-  .btn-search { background: #3b82f6; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; }
+  .time-range input { width: 88px; }
+  .btn-search { background: #3b82f6; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; }
   .btn-search:hover { background: #2563eb; }
   .btn-search:disabled { background: #94a3b8; cursor: not-allowed; }
-  .info-bar { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 9px 24px; display: flex; align-items: center; gap: 14px; font-size: 12px; }
+  .info-bar { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 9px 24px; display: flex; align-items: center; gap: 12px; font-size: 12px; flex-wrap: wrap; }
   .updated { color: #64748b; }
   .updated strong { color: #1e293b; }
-  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; margin-right: 5px; animation: blink 2s infinite; }
-  .dot.red { background: #ef4444; }
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; margin-right: 4px; animation: blink 2s infinite; }
+  .dot.red { background: #ef4444; animation: none; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .notif-btn { margin-left: auto; background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 4px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; font-weight: 600; }
+  .notif-btn { background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 4px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; font-weight: 600; }
+  .auto-label { color: #64748b; display: flex; align-items: center; gap: 6px; }
+  .auto-label select { padding: 2px 6px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 12px; background: #f8fafc; }
   .date-tabs { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 0 24px; display: flex; overflow-x: auto; }
   .date-tab { padding: 11px 16px; font-size: 13px; font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; color: #64748b; white-space: nowrap; transition: all 0.2s; }
   .date-tab:hover { color: #1e293b; }
@@ -43,12 +45,12 @@
   .main { padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; }
   .airline-section { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; }
   .airline-header { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-bottom: 1px solid #f1f5f9; }
-  .logo { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; }
+  .logo { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
   .logo-lj { background: linear-gradient(135deg,#00408c,#0066cc); }
   .logo-jc { background: linear-gradient(135deg,#ff6b00,#ff9500); }
   .logo-tw { background: linear-gradient(135deg,#cc0000,#ff3333); }
   .airline-name { font-size: 15px; font-weight: 700; }
-  .airline-st { margin-left: auto; font-size: 12px; color: #94a3b8; }
+  .airline-st { margin-left: auto; font-size: 12px; color: #94a3b8; white-space: nowrap; }
   .airline-st.ok { color: #16a34a; font-weight: 600; }
   .airline-st.err { color: #dc2626; }
   .flights-wrap { padding: 14px 18px; }
@@ -68,11 +70,10 @@
   .seat-no { background: #fee2e2; color: #dc2626; }
   .no-data { padding: 24px; text-align: center; color: #94a3b8; font-size: 13px; }
   .fallback { padding: 14px 18px; display: flex; align-items: center; gap: 12px; font-size: 13px; color: #64748b; }
-  .fallback a { margin-left: auto; color: #2563eb; text-decoration: none; background: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; }
+  .fallback a { margin-left: auto; color: #2563eb; text-decoration: none; background: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; white-space: nowrap; }
   .loading { text-align: center; padding: 60px; color: #94a3b8; }
   .spinner { display: block; width: 28px; height: 28px; border: 3px solid #e2e8f0; border-top-color: #3b82f6; border-radius: 50%; margin: 12px auto 0; animation: spin 0.8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .error-box { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 16px; color: #dc2626; font-size: 13px; }
   footer { text-align: center; padding: 20px; color: #94a3b8; font-size: 12px; border-top: 1px solid #e2e8f0; margin-top: 8px; }
 </style>
 </head>
@@ -82,13 +83,13 @@
   <span style="font-size:26px">✈️</span>
   <div>
     <h1>김포 → 제주 좌석 모니터</h1>
-    <p>Cloudflare Workers 실시간 조회</p>
+    <p>실시간 자동 조회</p>
   </div>
   <div class="cf-badge">⚡ Cloudflare</div>
 </div>
 
 <div class="config-panel">
-  <div class="cg" style="flex:1;min-width:260px">
+  <div class="cg" style="flex:1;min-width:240px">
     <label>조회 날짜</label>
     <div id="dateChips" class="dates-wrap"></div>
     <div class="add-date">
@@ -111,7 +112,7 @@
     </select>
   </div>
   <div class="cg">
-    <label>출발 시간대</label>
+    <label>출발 시간</label>
     <div class="time-range">
       <input type="time" id="cfg_time_from" value="00:00" />
       <span>~</span>
@@ -124,6 +125,16 @@
 <div class="info-bar">
   <span class="updated">마지막 조회: <strong id="updatedAt">-</strong></span>
   <span id="alertCount" style="display:none;color:#16a34a;font-weight:600"></span>
+  <span class="auto-label">
+    자동반복:
+    <select id="autoInterval" onchange="setAutoRefresh()">
+      <option value="0">끄기</option>
+      <option value="60">1분</option>
+      <option value="180">3분</option>
+      <option value="300" selected>5분</option>
+      <option value="600">10분</option>
+    </select>
+  </span>
   <button class="notif-btn" onclick="requestNotif()">🔔 알림</button>
   <span id="statusDot"><span class="dot red"></span>대기 중</span>
 </div>
@@ -131,21 +142,21 @@
 <div class="date-tabs" id="dateTabs"></div>
 <div class="main" id="main">
   <div class="no-data" style="padding:60px;font-size:14px">
-    📅 날짜를 선택하고 <strong>조회</strong> 버튼을 눌러주세요
+    📅 날짜 선택 후 <strong>조회</strong> 버튼을 눌러주세요
   </div>
 </div>
-
-<footer>Cloudflare Workers로 실시간 조회 · 항공사 클릭 시 예매 페이지로 이동</footer>
+<footer>항공사 카드 클릭 시 예매 페이지로 이동</footer>
 
 <script>
 const PROXY = 'https://flight-proxy.jajadoo.workers.dev';
-
 let cfg = JSON.parse(localStorage.getItem('flightCfg') || '{}');
 let selDates = cfg.dates || [];
-let results = {}; // date -> airlines[]
+let results = {};
 let currentDate = null;
 let prevKeys = new Set(JSON.parse(localStorage.getItem('availKeys') || '[]'));
+let autoTimer = null;
 
+// 설정 복원
 document.getElementById('cfg_adults').value = cfg.adults || '1';
 document.getElementById('cfg_children').value = cfg.children || '0';
 document.getElementById('cfg_time_from').value = cfg.timeFrom || '00:00';
@@ -158,6 +169,7 @@ if (!selDates.length) {
   }
 }
 renderChips();
+setAutoRefresh();
 
 function renderChips() {
   document.getElementById('dateChips').innerHTML = selDates.map(d =>
@@ -166,7 +178,6 @@ function renderChips() {
   const t = new Date(); t.setDate(t.getDate() + 1);
   document.getElementById('newDateInput').value = t.toISOString().slice(0,10);
 }
-
 function addDate() {
   const v = document.getElementById('newDateInput').value.replace(/-/g,'');
   if (v && !selDates.includes(v)) { selDates.push(v); selDates.sort(); renderChips(); }
@@ -184,6 +195,14 @@ function saveConfig() {
   localStorage.setItem('flightCfg', JSON.stringify(cfg));
 }
 
+function setAutoRefresh() {
+  if (autoTimer) clearInterval(autoTimer);
+  const sec = parseInt(document.getElementById('autoInterval').value);
+  if (sec > 0) {
+    autoTimer = setInterval(() => { if (selDates.length) searchAll(true); }, sec * 1000);
+  }
+}
+
 function inTime(t) {
   if (!t) return true;
   const v = t.replace(':', '');
@@ -192,207 +211,157 @@ function inTime(t) {
   return v >= f && v <= e;
 }
 
-// ── 진에어 조회 ──────────────────────────────────────────
+// ── 진에어: 브라우저에서 직접 호출 (CORS 허용됨) ──
 async function fetchJinair(date, adults, children) {
   const params = new URLSearchParams({
-    tripType: 'OW', origin1: 'GMP', destination1: 'CJU',
-    travelDate1: date, adultPaxCount: adults, childPaxCount: children,
-    infantPaxCount: '0', pointOfPurchase: 'KR', refVal: 'JINAIR',
-    cached: 'true', chgBestFareDate: 'true'
+    tripType:'OW', origin1:'GMP', destination1:'CJU',
+    travelDate1:date, adultPaxCount:adults, childPaxCount:children,
+    infantPaxCount:'0', pointOfPurchase:'KR', refVal:'JINAIR',
+    cached:'true', chgBestFareDate:'true'
   });
-  const target = 'https://www.jinair.com/booking/getAirAvailabilityJson';
-  const url = `${PROXY}?url=${encodeURIComponent(target)}`;
-
+  const bookingUrl = `https://www.jinair.com/booking/selectSchedule?tripType=OW&origin1=GMP&destination1=CJU&travelDate1=${date}&adultPaxCount=${adults}&childPaxCount=${children}&infantPaxCount=0&pointOfPurchase=KR`;
   try {
-    const r = await fetch(url, { method: 'POST', headers: {'Content-Type':'application/x-www-form-urlencoded'}, body: params });
+    const r = await fetch('https://www.jinair.com/booking/getAirAvailabilityJson', {
+      method: 'POST',
+      headers: {'Content-Type':'application/x-www-form-urlencoded'},
+      body: params
+    });
     const data = await r.json();
-    const trips = (data?.result?.originDestinationInfo?.[0]?.tripInfo) || [];
+    const trips = data?.result?.originDestinationInfo?.[0]?.tripInfo || [];
     const flights = [];
-    const bookingUrl = `https://www.jinair.com/booking/selectSchedule?tripType=OW&origin1=GMP&destination1=CJU&travelDate1=${date}&adultPaxCount=${adults}&childPaxCount=${children}&infantPaxCount=0&pointOfPurchase=KR`;
-
     for (const trip of trips) {
-      const seg = trip.segmentInfo?.[0];
-      if (!seg) continue;
-      const depTime = (seg.departureInfo?.dateTimeLTC || '').slice(11,16);
-      const arrTime = (seg.arrivalInfo?.dateTimeLTC || '').slice(11,16);
+      const seg = trip.segmentInfo?.[0]; if (!seg) continue;
+      const depTime = (seg.departureInfo?.dateTimeLTC||'').slice(11,16);
+      const arrTime = (seg.arrivalInfo?.dateTimeLTC||'').slice(11,16);
       const flightNo = `${seg.flightIdentifierInfo?.carrierCode||''}${seg.flightIdentifierInfo?.flightNumber||''}`;
       if (!inTime(depTime)) continue;
-
-      let available = false, seats = 0, minPrice = null;
-      for (const av of (trip.segmentAvailability || [])) {
-        if (av.inventoryStatus === 'AV' && av.seatAvailablity > 0) { available = true; seats += av.seatAvailablity; }
+      let available=false, seats=0, minPrice=null;
+      for (const av of (trip.segmentAvailability||[])) {
+        if (av.inventoryStatus==='AV' && av.seatAvailablity>0) { available=true; seats+=av.seatAvailablity; }
       }
-      for (const pi of (trip.pricingInfo || [])) {
-        for (const pax of (pi.paxPricingInfo || [])) {
-          if (pax.paxType === 'ADULT' && pax.totalAmount) {
-            if (minPrice === null || pax.totalAmount < minPrice) minPrice = pax.totalAmount;
-          }
+      for (const pi of (trip.pricingInfo||[])) {
+        for (const pax of (pi.paxPricingInfo||[])) {
+          if (pax.paxType==='ADULT' && pax.totalAmount && (minPrice===null||pax.totalAmount<minPrice)) minPrice=pax.totalAmount;
         }
-        for (const sa of (pi.segmentAvailability || [])) {
-          if (sa.inventoryStatus === 'AV') available = true;
-        }
+        for (const sa of (pi.segmentAvailability||[])) { if (sa.inventoryStatus==='AV') available=true; }
       }
-      flights.push({ flightNo, depTime, arrTime, available, seats, price: minPrice, bookingUrl });
+      flights.push({flightNo, depTime, arrTime, available, seats, price:minPrice, bookingUrl});
     }
-    return { airline: 'jinair', name: '진에어', date, flights };
+    return {airline:'jinair', name:'진에어', date, flights};
   } catch(e) {
-    return { airline: 'jinair', name: '진에어', date, error: e.message, flights: [],
-      fallbackUrl: `https://www.jinair.com/booking/selectSchedule?tripType=OW&origin1=GMP&destination1=CJU&travelDate1=${date}&adultPaxCount=${adults}&childPaxCount=${children}&infantPaxCount=0&pointOfPurchase=KR` };
+    return {airline:'jinair', name:'진에어', date, error:e.message, flights:[], fallbackUrl:bookingUrl};
   }
 }
 
-// ── 제주항공 조회 ──────────────────────────────────────────
+// ── 제주항공: Worker 경유 ──
 async function fetchJejuair(date, adults, children) {
-  const targetUrl = `https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=${date}&paxType=ADT&paxCount=${parseInt(adults)+parseInt(children)}`;
-  const url = `${PROXY}?url=${encodeURIComponent(targetUrl)}`;
+  const pax = parseInt(adults)+parseInt(children);
+  const targetUrl = `https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=${date}&paxType=ADT&paxCount=${pax}`;
   try {
-    const r = await fetch(url);
+    const r = await fetch(`${PROXY}?url=${encodeURIComponent(targetUrl)}`);
     const html = await r.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
+    const doc = new DOMParser().parseFromString(html, 'text/html');
     const flights = [];
-
-    // JSON 인라인 데이터 먼저 시도
-    const scripts = doc.querySelectorAll('script');
-    let found = false;
-    for (const s of scripts) {
+    // 인라인 JSON 시도
+    for (const s of doc.querySelectorAll('script')) {
       const m = s.textContent.match(/scheduleList\s*=\s*(\[[\s\S]*?\]);/);
       if (m) {
         try {
-          const list = JSON.parse(m[1]);
-          for (const f of list) {
-            const dep = f.depTime || f.dptTm;
+          for (const f of JSON.parse(m[1])) {
+            const dep = f.depTime||f.dptTm;
             if (!inTime(dep)) continue;
-            flights.push({
-              flightNo: f.flightNo || f.fltNo,
-              depTime: dep, arrTime: f.arrTime || f.arvTm,
-              available: parseInt(f.availSeat || f.remainSeat || 0) > 0,
-              seats: parseInt(f.availSeat || f.remainSeat || 0),
-              price: f.totalAmt || f.fare,
-              bookingUrl: targetUrl,
-            });
+            flights.push({flightNo:f.flightNo||f.fltNo, depTime:dep, arrTime:f.arrTime||f.arvTm,
+              available:parseInt(f.availSeat||f.remainSeat||0)>0, seats:parseInt(f.availSeat||f.remainSeat||0),
+              price:f.totalAmt||f.fare, bookingUrl:targetUrl});
           }
-          found = true; break;
+          break;
         } catch(e) {}
       }
     }
-
-    if (!found) {
-      // HTML 파싱 시도
-      doc.querySelectorAll('[class*="schedule-item"],[class*="flight-item"],[class*="result-item"]').forEach(item => {
-        const fn = item.querySelector('[class*="flight-num"],[class*="tk-num"]')?.textContent?.trim();
-        const dep = item.querySelector('[class*="dep-time"],[class*="dep_time"]')?.textContent?.trim();
-        const arr = item.querySelector('[class*="arr-time"],[class*="arr_time"]')?.textContent?.trim();
-        const seatEl = item.querySelector('[class*="remain"],[class*="avail-seat"]');
-        const seats = parseInt(seatEl?.textContent?.replace(/[^0-9]/g,'') || '0');
-        if (fn && inTime(dep)) {
-          flights.push({ flightNo: fn, depTime: dep, arrTime: arr, available: seats > 0, seats, price: null, bookingUrl: targetUrl });
-        }
-      });
-    }
-
-    return { airline: 'jejuair', name: '제주항공', date, flights };
+    return {airline:'jejuair', name:'제주항공', date, flights};
   } catch(e) {
-    return { airline: 'jejuair', name: '제주항공', date, error: e.message, flights: [], fallbackUrl: targetUrl };
+    return {airline:'jejuair', name:'제주항공', date, error:e.message, flights:[], fallbackUrl:targetUrl};
   }
 }
 
-// ── 티웨이 조회 ──────────────────────────────────────────
+// ── 티웨이: Worker 경유 ──
 async function fetchTway(date, adults) {
   const bookingUrl = `https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=${date}&paxType=ADT&paxCount=${adults}`;
-  const url = `${PROXY}?url=${encodeURIComponent(bookingUrl)}`;
   try {
-    const r = await fetch(url);
+    const r = await fetch(`${PROXY}?url=${encodeURIComponent(bookingUrl)}`);
     const html = await r.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const flights = [];
-    const seen = new Set();
-
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const flights = []; const seen = new Set();
     doc.querySelectorAll('[data-flightnumber]').forEach(box => {
       const fn = box.getAttribute('data-flightnumber');
-      if (!fn || seen.has(fn)) return;
-      seen.add(fn);
-      const dep = box.querySelector('.service_name.first strong, [class*="first"] strong')?.textContent?.trim();
-      const arr = box.querySelector('.service_name.last strong, [class*="last"] strong')?.textContent?.trim();
+      if (!fn||seen.has(fn)) return; seen.add(fn);
+      const dep = box.querySelector('.service_name.first strong,[class*="first"] strong')?.textContent?.trim();
+      const arr = box.querySelector('.service_name.last strong,[class*="last"] strong')?.textContent?.trim();
       if (!inTime(dep)) return;
-      const seatEl = box.querySelector('[class*="empty_seat"]');
-      const seats = parseInt(seatEl?.textContent?.replace(/[^0-9]/g,'') || '0');
+      const seats = parseInt(box.querySelector('[class*="empty_seat"]')?.textContent?.replace(/[^0-9]/g,'')||'0');
       const priceEl = box.querySelector('strong[class*="price"]');
-      const price = priceEl ? parseInt(priceEl.textContent.replace(/[^0-9]/g,'')) || null : null;
-      flights.push({ flightNo: fn, depTime: dep, arrTime: arr, available: seats > 0, seats, price, bookingUrl });
+      const price = priceEl ? parseInt(priceEl.textContent.replace(/[^0-9]/g,''))||null : null;
+      flights.push({flightNo:fn, depTime:dep, arrTime:arr, available:seats>0, seats, price, bookingUrl});
     });
-
-    if (!flights.length) {
-      return { airline: 'tway', name: '티웨이', date, flights: [], fallbackUrl: bookingUrl, note: '티웨이는 예매 페이지에서 직접 확인해주세요.' };
-    }
-    return { airline: 'tway', name: '티웨이', date, flights };
+    if (!flights.length) return {airline:'tway', name:'티웨이', date, flights:[], fallbackUrl:bookingUrl, note:'티웨이는 예매 페이지에서 직접 확인해주세요.'};
+    return {airline:'tway', name:'티웨이', date, flights};
   } catch(e) {
-    return { airline: 'tway', name: '티웨이', date, error: e.message, flights: [], fallbackUrl: bookingUrl };
+    return {airline:'tway', name:'티웨이', date, error:e.message, flights:[], fallbackUrl:bookingUrl};
   }
 }
 
-// ── 전체 조회 ──────────────────────────────────────────
-async function searchAll() {
-  if (!selDates.length) { alert('날짜를 추가해주세요!'); return; }
-  saveConfig();
-
+// ── 전체 조회 ──
+async function searchAll(auto=false) {
+  if (!selDates.length) { if(!auto) alert('날짜를 추가해주세요!'); return; }
+  if (!auto) saveConfig();
   const btn = document.getElementById('searchBtn');
-  btn.disabled = true; btn.textContent = '⏳ 조회 중...';
-  document.getElementById('statusDot').innerHTML = '<span class="dot"></span>조회 중...';
-
-  const adults = cfg.adults || '1';
-  const children = cfg.children || '0';
-  results = {};
-
-  const main = document.getElementById('main');
-  main.innerHTML = `<div class="loading">항공편 조회 중...<div class="spinner"></div></div>`;
-
-  for (const date of selDates) {
-    results[date] = [];
-    const [jin, jeju, tway] = await Promise.all([
-      fetchJinair(date, adults, children),
-      fetchJejuair(date, adults, children),
-      fetchTway(date, adults),
-    ]);
-    results[date] = [jin, jeju, tway];
+  btn.disabled=true; btn.textContent='⏳ 조회 중...';
+  document.getElementById('statusDot').innerHTML='<span class="dot"></span>조회 중...';
+  const adults=cfg.adults||'1', children=cfg.children||'0';
+  if (!auto) {
+    results={};
+    document.getElementById('main').innerHTML='<div class="loading">항공편 조회 중...<div class="spinner"></div></div>';
   }
-
-  const now = new Date().toLocaleString('ko-KR', {timeZone:'Asia/Seoul'});
-  document.getElementById('updatedAt').textContent = now;
-  document.getElementById('statusDot').innerHTML = '<span class="dot"></span>조회 완료';
-  btn.disabled = false; btn.textContent = '🔍 조회';
-
-  if (!currentDate || !selDates.includes(currentDate)) currentDate = selDates[0];
+  for (const date of selDates) {
+    const [jin,jeju,tway] = await Promise.all([
+      fetchJinair(date,adults,children),
+      fetchJejuair(date,adults,children),
+      fetchTway(date,adults),
+    ]);
+    results[date]=[jin,jeju,tway];
+  }
+  const now=new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'});
+  document.getElementById('updatedAt').textContent=now;
+  document.getElementById('statusDot').innerHTML='<span class="dot"></span>완료';
+  btn.disabled=false; btn.textContent='🔍 조회';
+  if (!currentDate||!selDates.includes(currentDate)) currentDate=selDates[0];
   renderTabs(); renderDate(currentDate); checkNewAvail();
 }
 
 function renderTabs() {
-  document.getElementById('dateTabs').innerHTML = selDates.map(d => {
-    const av = (results[d] || []).reduce((s,r) => s + (r.flights||[]).filter(f=>f.available&&inTime(f.depTime)).length, 0);
+  document.getElementById('dateTabs').innerHTML=selDates.map(d=>{
+    const av=(results[d]||[]).reduce((s,r)=>s+(r.flights||[]).filter(f=>f.available&&inTime(f.depTime)).length,0);
     return `<div class="date-tab ${d===currentDate?'active':''}" onclick="selectDate('${d}')">${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6)}${av>0?`<span class="avail-cnt">${av}</span>`:''}</div>`;
   }).join('');
 }
-
-function selectDate(d) { currentDate = d; renderTabs(); renderDate(d); }
+function selectDate(d){currentDate=d;renderTabs();renderDate(d);}
 
 function renderDate(date) {
-  const dateResults = results[date] || [];
-  const main = document.getElementById('main');
-  const logos = { jinair:'logo-lj', jejuair:'logo-jc', tway:'logo-tw' };
-  const codes = { jinair:'LJ', jejuair:'7C', tway:'TW' };
-
-  main.innerHTML = dateResults.map(r => {
-    const fl = (r.flights||[]).filter(f => inTime(f.depTime));
-    const av = fl.filter(f => f.available).length;
-    const hasErr = !!r.error;
-    let content = '';
-    if (r.fallbackUrl && !fl.length) {
-      content = `<div class="fallback"><span>⚠️ ${r.note||'직접 조회 필요'}</span><a href="${r.fallbackUrl}" target="_blank">예매 페이지 열기 →</a></div>`;
-    } else if (!fl.length) {
-      content = `<div class="flights-wrap"><div class="no-data">${hasErr?'⚠️ '+r.error:'해당 시간대 항공편 없음'}</div></div>`;
+  const list=results[date]||[];
+  const main=document.getElementById('main');
+  const logos={jinair:'logo-lj',jejuair:'logo-jc',tway:'logo-tw'};
+  const codes={jinair:'LJ',jejuair:'7C',tway:'TW'};
+  main.innerHTML=list.map(r=>{
+    const fl=(r.flights||[]).filter(f=>inTime(f.depTime));
+    const av=fl.filter(f=>f.available).length;
+    const hasErr=!!r.error;
+    let content='';
+    if(r.fallbackUrl&&!fl.length){
+      content=`<div class="fallback"><span>⚠️ ${r.note||'직접 조회 필요'}</span><a href="${r.fallbackUrl}" target="_blank">예매 페이지 →</a></div>`;
+    } else if(!fl.length){
+      content=`<div class="flights-wrap"><div class="no-data">${hasErr?'⚠️ '+r.error:'해당 시간대 항공편 없음'}</div></div>`;
     } else {
-      content = `<div class="flights-wrap"><div class="flights-grid">${fl.map(f=>card(r.airline,f)).join('')}</div></div>`;
+      content=`<div class="flights-wrap"><div class="flights-grid">${fl.map(f=>card(r.airline,f)).join('')}</div></div>`;
     }
     return `<div class="airline-section">
       <div class="airline-header">
@@ -401,15 +370,14 @@ function renderDate(date) {
         <span class="airline-st ${av>0?'ok':hasErr?'err':''}">${av>0?`✅ ${av}편 잔여`:'✗ 잔여 없음'}</span>
       </div>${content}</div>`;
   }).join('');
-
-  const total = dateResults.reduce((s,r) => s+(r.flights||[]).filter(f=>f.available&&inTime(f.depTime)).length, 0);
-  const cnt = document.getElementById('alertCount');
-  if (total > 0) { cnt.textContent = `🎉 ${date.slice(4,6)}/${date.slice(6)} 잔여 ${total}편`; cnt.style.display='inline'; }
-  else cnt.style.display = 'none';
+  const total=list.reduce((s,r)=>s+(r.flights||[]).filter(f=>f.available&&inTime(f.depTime)).length,0);
+  const cnt=document.getElementById('alertCount');
+  if(total>0){cnt.textContent=`🎉 ${date.slice(4,6)}/${date.slice(6)} 잔여 ${total}편`;cnt.style.display='inline';}
+  else cnt.style.display='none';
 }
 
-function card(airline, f) {
-  const sc = !f.available?'no':f.seats<=3?'few':'ok';
+function card(airline,f){
+  const sc=!f.available?'no':f.seats<=3?'few':'ok';
   return `<div class="flight-card ${f.available?'avail':'sold'}" onclick="window.open('${f.bookingUrl}','_blank')">
     ${f.available?'<div class="avail-dot"></div>':''}
     <div class="flight-no">${f.flightNo||''}</div>
@@ -419,27 +387,24 @@ function card(airline, f) {
   </div>`;
 }
 
-function checkNewAvail() {
-  const keys = new Set(), newOnes = [];
-  Object.entries(results).forEach(([date, list]) => {
-    list.forEach(r => {
-      (r.flights||[]).filter(f=>f.available&&inTime(f.depTime)).forEach(f => {
-        const k = `${r.airline}-${f.flightNo}-${date}`;
+function checkNewAvail(){
+  const keys=new Set(),newOnes=[];
+  Object.entries(results).forEach(([date,list])=>{
+    list.forEach(r=>{
+      (r.flights||[]).filter(f=>f.available&&inTime(f.depTime)).forEach(f=>{
+        const k=`${r.airline}-${f.flightNo}-${date}`;
         keys.add(k);
-        if (!prevKeys.has(k)) newOnes.push(`${r.name} ${f.flightNo} ${f.depTime}`);
+        if(!prevKeys.has(k))newOnes.push(`${r.name} ${f.flightNo} ${f.depTime}`);
       });
     });
   });
-  if (newOnes.length && Notification.permission === 'granted') {
-    new Notification('✈️ 잔여석 발견!', { body: newOnes.join('\n') }); beep();
+  if(newOnes.length&&Notification.permission==='granted'){
+    new Notification('✈️ 잔여석 발견!',{body:newOnes.join('\n')});beep();
   }
-  prevKeys = keys; localStorage.setItem('availKeys', JSON.stringify([...keys]));
+  prevKeys=keys;localStorage.setItem('availKeys',JSON.stringify([...keys]));
 }
-
-function beep() {
-  try { const ac=new(window.AudioContext||window.webkitAudioContext)();[523,659,784].forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.frequency.value=f;o.type='sine';const t=ac.currentTime+i*.15;g.gain.setValueAtTime(.3,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);}); } catch(e) {}
-}
-function requestNotif() { Notification.requestPermission().then(p=>alert(p==='granted'?'✅ 알림 허용됨!':'알림 거부됨')); }
+function beep(){try{const ac=new(window.AudioContext||window.webkitAudioContext)();[523,659,784].forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.frequency.value=f;o.type='sine';const t=ac.currentTime+i*.15;g.gain.setValueAtTime(.3,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}catch(e){}}
+function requestNotif(){Notification.requestPermission().then(p=>alert(p==='granted'?'✅ 알림 허용됨!':'알림 거부됨'));}
 </script>
 </body>
 </html>
