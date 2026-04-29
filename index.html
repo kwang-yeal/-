@@ -3,87 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>✈️ 김포→제주 좌석 모니터</title>
+<title>✈️ 김포→제주 항공권 바로가기</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #f0f4f8; color: #1e293b; font-family: -apple-system, 'Segoe UI', sans-serif; min-height: 100vh; }
   .header { background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 16px 24px; display: flex; align-items: center; gap: 12px; color: #fff; }
   .header h1 { font-size: 17px; font-weight: 700; }
   .header p { font-size: 11px; opacity: 0.85; margin-top: 2px; }
-  .badge { margin-left: auto; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; }
-  .config-panel { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
-  .cg { display: flex; flex-direction: column; gap: 3px; }
-  .cg label { font-size: 10px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
-  .cg input, .cg select { background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b; padding: 6px 8px; border-radius: 7px; font-size: 12px; outline: none; }
-  .dates-wrap { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; margin-bottom: 5px; min-height: 26px; }
-  .date-chip { display: flex; align-items: center; gap: 3px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 5px; padding: 3px 7px; font-size: 11px; color: #1d4ed8; }
-  .date-chip button { background: none; border: none; cursor: pointer; color: #93c5fd; font-size: 13px; line-height: 1; padding: 0; }
-  .add-date { display: flex; gap: 5px; }
-  .add-date input { width: 130px; }
-  .btn-add { background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 6px 10px; border-radius: 7px; font-size: 11px; cursor: pointer; font-weight: 600; }
-  .time-range { display: flex; gap: 5px; align-items: center; }
-  .time-range span { font-size: 11px; color: #94a3b8; }
-  .time-range input { width: 85px; }
-  .btn-search { background: #3b82f6; color: #fff; border: none; padding: 7px 16px; border-radius: 7px; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; }
-  .btn-search:hover { background: #2563eb; }
-  .btn-stop { background: #ef4444; color: #fff; border: none; padding: 7px 16px; border-radius: 7px; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; display: none; }
 
-  .info-bar { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 8px 20px; display: flex; align-items: center; gap: 10px; font-size: 11px; flex-wrap: wrap; }
-  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; margin-right: 4px; animation: blink 2s infinite; }
-  .dot.red { background: #ef4444; animation: none; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .auto-label { color: #64748b; display: flex; align-items: center; gap: 5px; }
-  .auto-label select { padding: 2px 5px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 11px; background: #f8fafc; }
-  .countdown { font-size: 11px; color: #3b82f6; font-weight: 700; }
-  .notif-btn { background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 3px 10px; border-radius: 7px; font-size: 11px; cursor: pointer; font-weight: 600; }
+  .config-panel { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 16px 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+  .cg { display: flex; flex-direction: column; gap: 4px; }
+  .cg label { font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .cg input, .cg select { background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b; padding: 7px 10px; border-radius: 8px; font-size: 13px; outline: none; }
+  .cg input:focus, .cg select:focus { border-color: #3b82f6; }
+  .dates-wrap { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; min-height: 28px; }
+  .date-chip { display: flex; align-items: center; gap: 4px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 8px; font-size: 12px; color: #1d4ed8; }
+  .date-chip button { background: none; border: none; cursor: pointer; color: #93c5fd; font-size: 14px; line-height: 1; padding: 0; }
+  .add-date { display: flex; gap: 6px; }
+  .add-date input { width: 140px; }
+  .btn-add { background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 7px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; font-weight: 600; }
+  .time-range { display: flex; gap: 6px; align-items: center; }
+  .time-range span { font-size: 12px; color: #94a3b8; }
+  .time-range input { width: 88px; }
 
-  .main { padding: 16px 20px; display: flex; flex-direction: column; gap: 20px; }
+  .btn-open-all { background: #3b82f6; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .btn-open-all:hover { background: #2563eb; }
 
-  /* 날짜 섹션 */
+  .main { padding: 20px 24px; display: flex; flex-direction: column; gap: 24px; }
+
   .date-section { display: flex; flex-direction: column; gap: 10px; }
-  .date-header { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #1e40af; color: #fff; border-radius: 10px; }
-  .date-header h2 { font-size: 15px; font-weight: 700; }
-  .date-avail { margin-left: auto; background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+  .date-header { background: #1e40af; color: #fff; padding: 10px 16px; border-radius: 10px; font-size: 15px; font-weight: 700; }
 
-  /* 항공편 카드 */
-  .flight-card { background: #fff; border-radius: 10px; border: 1px solid #e2e8f0; padding: 14px 18px; display: flex; align-items: center; gap: 14px; cursor: pointer; transition: all 0.2s; }
-  .flight-card:hover { border-color: #3b82f6; box-shadow: 0 3px 10px rgba(59,130,246,0.1); transform: translateY(-1px); }
-  .flight-card.avail { border-color: #86efac; background: #f0fdf4; }
-  .flight-card.sold { opacity: 0.4; }
-  .airline-logo { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #fff; flex-shrink: 0; }
-  .logo-RS { background: linear-gradient(135deg,#e65c00,#f9d423); }
-  .logo-BX { background: linear-gradient(135deg,#e60012,#ff6b6b); }
-  .logo-LJ { background: linear-gradient(135deg,#00408c,#0066cc); }
-  .logo-7C { background: linear-gradient(135deg,#ff6b00,#ff9500); }
-  .logo-TW { background: linear-gradient(135deg,#cc0000,#ff3333); }
-  .logo-OZ { background: linear-gradient(135deg,#0055a4,#0099cc); }
-  .logo-KE { background: linear-gradient(135deg,#00256c,#003DA6); }
-  .logo-ZE { background: linear-gradient(135deg,#ff6600,#ffaa00); }
-  .logo-4V { background: linear-gradient(135deg,#6b21a8,#9333ea); }
-  .logo-default { background: linear-gradient(135deg,#64748b,#94a3b8); }
-  .flight-info { flex: 1; }
-  .flight-route { font-size: 20px; font-weight: 800; color: #1e293b; }
-  .flight-route span { color: #94a3b8; font-size: 14px; font-weight: 400; margin: 0 5px; }
-  .flight-meta { font-size: 11px; color: #64748b; margin-top: 2px; }
-  .flight-right { text-align: right; flex-shrink: 0; }
-  .flight-price { font-size: 18px; font-weight: 800; color: #2563eb; }
-  .flight-price small { font-size: 11px; font-weight: 400; color: #94a3b8; }
-  .avail-badge { display: inline-block; margin-top: 4px; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; }
-  .avail-dot-sm { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #22c55e; margin-right: 3px; animation: blink 1.5s infinite; }
-  .seat-ok { background: #dcfce7; color: #16a34a; }
-  .seat-few { background: #fef9c3; color: #a16207; }
-  .seat-none { background: #fee2e2; color: #dc2626; }
+  .airlines-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
 
-  .no-flights { background: #fff; border-radius: 10px; border: 1px solid #e2e8f0; padding: 24px; text-align: center; color: #94a3b8; font-size: 13px; }
-  .no-flights a { color: #2563eb; text-decoration: none; display: block; margin-top: 6px; font-size: 12px; }
+  .airline-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; transition: all 0.2s; }
+  .airline-card:hover { border-color: #3b82f6; box-shadow: 0 4px 12px rgba(59,130,246,0.1); transform: translateY(-1px); }
+  .airline-top { display: flex; align-items: center; gap: 10px; }
+  .logo { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; flex-shrink: 0; }
+  .logo-lj { background: linear-gradient(135deg,#00408c,#0066cc); }
+  .logo-jc { background: linear-gradient(135deg,#ff6b00,#ff9500); }
+  .logo-tw { background: linear-gradient(135deg,#cc0000,#ff3333); }
+  .logo-oz { background: linear-gradient(135deg,#0055a4,#0099cc); }
+  .logo-ke { background: linear-gradient(135deg,#00256c,#003DA6); }
+  .logo-rs { background: linear-gradient(135deg,#e65c00,#f9a825); }
+  .logo-bx { background: linear-gradient(135deg,#e60012,#ff6b6b); }
+  .logo-ze { background: linear-gradient(135deg,#ff6600,#ffaa00); }
+  .logo-naver { background: linear-gradient(135deg,#03c75a,#00a847); }
+  .airline-name { font-size: 14px; font-weight: 700; color: #1e293b; }
+  .airline-sub { font-size: 11px; color: #94a3b8; margin-top: 1px; }
+  .btn-open { width: 100%; background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 8px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+  .btn-open:hover { background: #dbeafe; }
 
-  .loading-msg { text-align: center; padding: 40px; color: #94a3b8; font-size: 13px; }
-  .spinner { display: block; width: 24px; height: 24px; border: 3px solid #e2e8f0; border-top-color: #3b82f6; border-radius: 50%; margin: 10px auto 0; animation: spin 0.8s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
+  .naver-card { background: #f0fdf4; border-color: #86efac; }
+  .naver-card .btn-open { background: #dcfce7; border-color: #86efac; color: #16a34a; }
+  .naver-card .btn-open:hover { background: #bbf7d0; }
 
-  .init-msg { text-align: center; padding: 60px 20px; color: #94a3b8; font-size: 14px; background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; }
-
-  footer { text-align: center; padding: 16px; color: #94a3b8; font-size: 11px; border-top: 1px solid #e2e8f0; margin-top: 8px; }
+  footer { text-align: center; padding: 20px; color: #94a3b8; font-size: 12px; border-top: 1px solid #e2e8f0; margin-top: 8px; }
 </style>
 </head>
 <body>
@@ -91,14 +66,13 @@
 <div class="header">
   <span style="font-size:24px">✈️</span>
   <div>
-    <h1>김포 → 제주 좌석 모니터</h1>
-    <p>네이버 항공권 실시간 조회</p>
+    <h1>김포 → 제주 항공권 바로가기</h1>
+    <p>날짜/인원 설정 후 항공사 페이지를 한번에 열기</p>
   </div>
-  <div class="badge">🟢 네이버 항공</div>
 </div>
 
 <div class="config-panel">
-  <div class="cg" style="flex:1;min-width:220px">
+  <div class="cg" style="flex:1;min-width:240px">
     <label>조회 날짜</label>
     <div id="dateChips" class="dates-wrap"></div>
     <div class="add-date">
@@ -120,52 +94,19 @@
       <option value="2">2명</option><option value="3">3명</option>
     </select>
   </div>
-  <div class="cg">
-    <label>출발 시간</label>
-    <div class="time-range">
-      <input type="time" id="cfg_time_from" value="00:00" />
-      <span>~</span>
-      <input type="time" id="cfg_time_to" value="23:59" />
-    </div>
-  </div>
-  <button class="btn-search" id="searchBtn" onclick="startSearch()">🔍 조회 시작</button>
-  <button class="btn-stop" id="stopBtn" onclick="stopSearch()">⏹ 중단</button>
+  <button class="btn-open-all" onclick="openAll()">🚀 전체 새탭으로 열기</button>
 </div>
 
-<div class="info-bar">
-  <span style="color:#64748b">마지막 조회: <strong id="updatedAt" style="color:#1e293b">-</strong></span>
-  <span id="totalAvail" style="display:none;color:#16a34a;font-weight:600"></span>
-  <span class="auto-label">자동반복:
-    <select id="autoInterval">
-      <option value="60">1분</option>
-      <option value="180">3분</option>
-      <option value="300" selected>5분</option>
-      <option value="600">10분</option>
-    </select>
-    <span class="countdown" id="countdown"></span>
-  </span>
-  <button class="notif-btn" onclick="requestNotif()">🔔 알림</button>
-  <span id="statusDot"><span class="dot red"></span>대기 중</span>
-</div>
+<div class="main" id="main"></div>
 
-<div class="main" id="main">
-  <div class="init-msg">📅 날짜를 선택하고 <strong>조회 시작</strong>을 눌러주세요</div>
-</div>
-
-<footer>네이버 항공권 데이터 · 카드 클릭 시 예매 페이지로 이동</footer>
+<footer>각 버튼 클릭 시 해당 항공사 예매 페이지가 새 탭으로 열립니다</footer>
 
 <script>
-const PROXY = 'https://flight-proxy.jajadoo.workers.dev';
-let cfg = JSON.parse(localStorage.getItem('flightCfg2') || '{}');
+let cfg = JSON.parse(localStorage.getItem('flightCfg3') || '{}');
 let selDates = cfg.dates || [];
-let results = {}; // date -> flights[]
-let prevKeys = new Set(JSON.parse(localStorage.getItem('availKeys') || '[]'));
-let autoTimer = null, countdownTimer = null, nextRunAt = null, isRunning = false;
 
 document.getElementById('cfg_adults').value = cfg.adults || '1';
 document.getElementById('cfg_children').value = cfg.children || '0';
-document.getElementById('cfg_time_from').value = cfg.timeFrom || '00:00';
-document.getElementById('cfg_time_to').value = cfg.timeTo || '23:59';
 
 if (!selDates.length) {
   for (let i = 1; i <= 3; i++) {
@@ -174,6 +115,7 @@ if (!selDates.length) {
   }
 }
 renderChips();
+render();
 
 function renderChips() {
   document.getElementById('dateChips').innerHTML = selDates.map(d =>
@@ -182,239 +124,116 @@ function renderChips() {
   const t = new Date(); t.setDate(t.getDate() + 1);
   document.getElementById('newDateInput').value = t.toISOString().slice(0,10);
 }
+
 function addDate() {
   const v = document.getElementById('newDateInput').value.replace(/-/g,'');
-  if (v && !selDates.includes(v)) { selDates.push(v); selDates.sort(); renderChips(); }
+  if (v && !selDates.includes(v)) { selDates.push(v); selDates.sort(); renderChips(); saveConfig(); render(); }
 }
-function removeDate(d) { selDates = selDates.filter(x => x !== d); renderChips(); }
+function removeDate(d) { selDates = selDates.filter(x => x !== d); renderChips(); saveConfig(); render(); }
 
 function saveConfig() {
   cfg = {
     dates: selDates,
     adults: document.getElementById('cfg_adults').value,
     children: document.getElementById('cfg_children').value,
-    timeFrom: document.getElementById('cfg_time_from').value,
-    timeTo: document.getElementById('cfg_time_to').value,
   };
-  localStorage.setItem('flightCfg2', JSON.stringify(cfg));
+  localStorage.setItem('flightCfg3', JSON.stringify(cfg));
 }
 
-function inTime(t) {
-  if (!t) return true;
-  const v = t.replace(':', '');
-  const f = (cfg.timeFrom || '00:00').replace(':', '');
-  const e = (cfg.timeTo || '23:59').replace(':', '');
-  return v >= f && v <= e;
-}
+document.getElementById('cfg_adults').addEventListener('change', () => { saveConfig(); render(); });
+document.getElementById('cfg_children').addEventListener('change', () => { saveConfig(); render(); });
 
-function startSearch() {
-  if (!selDates.length) { alert('날짜를 추가해주세요!'); return; }
-  saveConfig();
-  isRunning = true;
-  document.getElementById('searchBtn').style.display = 'none';
-  document.getElementById('stopBtn').style.display = 'inline-block';
-  doSearch();
-  scheduleNext();
-}
-
-function stopSearch() {
-  isRunning = false;
-  if (autoTimer) clearTimeout(autoTimer);
-  if (countdownTimer) clearInterval(countdownTimer);
-  document.getElementById('searchBtn').style.display = 'inline-block';
-  document.getElementById('stopBtn').style.display = 'none';
-  document.getElementById('statusDot').innerHTML = '<span class="dot red"></span>중단됨';
-  document.getElementById('countdown').textContent = '';
-}
-
-function scheduleNext() {
-  if (autoTimer) clearTimeout(autoTimer);
-  if (countdownTimer) clearInterval(countdownTimer);
-  if (!isRunning) return;
-  const sec = parseInt(document.getElementById('autoInterval').value);
-  nextRunAt = Date.now() + sec * 1000;
-  autoTimer = setTimeout(() => { if (isRunning) { doSearch(); scheduleNext(); } }, sec * 1000);
-  countdownTimer = setInterval(() => {
-    if (!isRunning) { clearInterval(countdownTimer); return; }
-    const rem = Math.max(0, Math.ceil((nextRunAt - Date.now()) / 1000));
-    document.getElementById('countdown').textContent = rem > 0 ? `${rem}초 후` : '';
-  }, 1000);
-}
-
-async function fetchNaverFlights(date, adults, children) {
-  const apiUrl = 'https://flight-api.naver.com/flight/domestic/searchFlights';
-  const payload = {
-    type: 'domestic',
-    device: 'pc',
-    fareType: 'YC',
-    tripType: 'OW',
-    initialRequest: true,
-    itineraries: [{ departureAirport: 'GMP', arrivalAirport: 'CJU', departureDate: date }],
-    person: { adult: parseInt(adults), child: parseInt(children), infant: 0 },
-    flightFilter: {}
-  };
-
-  const proxyUrl = `${PROXY}?url=${encodeURIComponent(apiUrl)}`;
-  const r = await fetch(proxyUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Referer': 'https://flight.naver.com/',
-      'Origin': 'https://flight.naver.com'
+function getAirlines(date, adults, children) {
+  const d = `${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6)}`;
+  const infant = 0;
+  return [
+    {
+      id: 'naver', name: '네이버 항공권', sub: '전체 항공사 비교', logoClass: 'logo-naver', code: 'N',
+      url: `https://flight.naver.com/flights/domestic/GMP-CJU-${date}?adult=${adults}&child=${children}&infant=${infant}`,
+      isNaver: true
     },
-    body: JSON.stringify(payload)
-  });
-  const data = await r.json();
-
-  const bookingUrl = `https://flight.naver.com/flights/domestic/GMP-CJU-${date}?adult=${adults}&child=${children}&infant=0`;
-  const flights = [];
-
-  // 응답 구조 파싱
-  const itineraries = data?.data?.itineraries || data?.itineraries || data?.result?.itineraries || [];
-  for (const it of itineraries) {
-    const seg = it?.segments?.[0] || it?.segment || it;
-    const airline = seg?.airline?.code || seg?.airlineCode || it?.airlineCode || '';
-    const airlineName = seg?.airline?.name || seg?.airlineName || it?.airlineName || airline;
-    const flightNo = seg?.flightNumber || seg?.flightNo || it?.flightNo || '';
-    const depTime = (seg?.departure?.time || seg?.departureTime || it?.departureTime || '').slice(0,5);
-    const arrTime = (seg?.arrival?.time || seg?.arrivalTime || it?.arrivalTime || '').slice(0,5);
-    const price = it?.fare?.adult || it?.lowestFare || it?.price || seg?.price;
-    const seats = it?.fare?.seatCount || it?.seatCount || seg?.seatCount || 0;
-
-    if (!inTime(depTime)) continue;
-    flights.push({ airline, airlineName, flightNo, depTime, arrTime, price, seats, available: seats > 0, bookingUrl });
-  }
-
-  // 다른 응답 구조 시도
-  if (!flights.length) {
-    const list = data?.flights || data?.data?.flights || data?.result?.flights || [];
-    for (const f of list) {
-      const depTime = (f.departureTime || f.depTime || '').slice(0,5);
-      if (!inTime(depTime)) continue;
-      flights.push({
-        airline: f.airlineCode || f.airline?.code || '',
-        airlineName: f.airlineName || f.airline?.name || '',
-        flightNo: f.flightNo || f.flightNumber || '',
-        depTime,
-        arrTime: (f.arrivalTime || f.arrTime || '').slice(0,5),
-        price: f.price || f.fare?.adult,
-        seats: f.seatCount || 0,
-        available: (f.seatCount || 0) > 0,
-        bookingUrl
-      });
-    }
-  }
-
-  return { flights, raw: data, bookingUrl };
+    {
+      id: 'jinair', name: '진에어', sub: 'LJ · Jin Air', logoClass: 'logo-lj', code: 'LJ',
+      url: `https://www.jinair.com/booking/selectSchedule?tripType=OW&origin1=GMP&destination1=CJU&travelDate1=${date}&adultPaxCount=${adults}&childPaxCount=${children}&infantPaxCount=0&pointOfPurchase=KR`
+    },
+    {
+      id: 'jejuair', name: '제주항공', sub: '7C · Jeju Air', logoClass: 'logo-jc', code: '7C',
+      url: `https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=${date}&paxType=ADT&paxCount=${parseInt(adults)+parseInt(children)}`
+    },
+    {
+      id: 'tway', name: '티웨이항공', sub: 'TW · T\'way Air', logoClass: 'logo-tw', code: 'TW',
+      url: `https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=${date}&paxType=ADT&paxCount=${adults}`
+    },
+    {
+      id: 'airseoul', name: '에어서울', sub: 'RS · Air Seoul', logoClass: 'logo-rs', code: 'RS',
+      url: `https://flyairseoul.com/CW/ko/selectFlight.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=${d}&adultCount=${adults}&childCount=${children}&infantCount=0`
+    },
+    {
+      id: 'airbusan', name: '에어부산', sub: 'BX · Air Busan', logoClass: 'logo-bx', code: 'BX',
+      url: `https://www.airbusan.com/ibe/booking/flight?depAirport=GMP&arrAirport=CJU&depDate=${date}&tripType=OW&adultCount=${adults}&childCount=${children}&infantCount=0`
+    },
+    {
+      id: 'asiana', name: '아시아나항공', sub: 'OZ · Asiana', logoClass: 'logo-oz', code: 'OZ',
+      url: `https://flyasiana.com/C/KR/KO/booking/availableStatus?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=${d}&adultCount=${adults}&childCount=${children}&infantCount=0`
+    },
+    {
+      id: 'korean', name: '대한항공', sub: 'KE · Korean Air', logoClass: 'logo-ke', code: 'KE',
+      url: `https://www.koreanair.com/booking/availability?dep=GMP&arr=CJU&depDate=${d}&tripType=OW&adult=${adults}&child=${children}&infant=0`
+    },
+  ];
 }
 
-async function doSearch() {
-  document.getElementById('statusDot').innerHTML = '<span class="dot"></span>조회 중...';
-  const adults = cfg.adults || '1';
-  const children = cfg.children || '0';
+function render() {
+  const adults = document.getElementById('cfg_adults').value;
+  const children = document.getElementById('cfg_children').value;
   const main = document.getElementById('main');
 
-  // 로딩 표시 (첫 조회시만)
-  if (Object.keys(results).length === 0) {
-    main.innerHTML = selDates.map(d =>
-      `<div class="date-section" id="sec_${d}">
-        <div class="date-header"><h2>📅 ${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6)}</h2></div>
-        <div class="loading-msg">조회 중...<div class="spinner"></div></div>
-      </div>`
-    ).join('');
+  if (!selDates.length) {
+    main.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8">날짜를 추가해주세요</div>';
+    return;
   }
 
-  let totalAvail = 0;
+  main.innerHTML = selDates.map(date => {
+    const airlines = getAirlines(date, adults, children);
+    return `<div class="date-section">
+      <div class="date-header">📅 ${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6)} · 성인 ${adults}명${children > 0 ? ` 어린이 ${children}명` : ''}</div>
+      <div class="airlines-grid">
+        ${airlines.map(a => `
+          <div class="airline-card ${a.isNaver ? 'naver-card' : ''}">
+            <div class="airline-top">
+              <div class="logo ${a.logoClass}">${a.code}</div>
+              <div>
+                <div class="airline-name">${a.name}</div>
+                <div class="airline-sub">${a.sub}</div>
+              </div>
+            </div>
+            <button class="btn-open" onclick="window.open('${a.url}','_blank')">
+              ${a.isNaver ? '🔍 전체 비교하기' : '예매 페이지 열기 →'}
+            </button>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
 
+function openAll() {
+  const adults = document.getElementById('cfg_adults').value;
+  const children = document.getElementById('cfg_children').value;
+  saveConfig();
+
+  if (!selDates.length) { alert('날짜를 추가해주세요!'); return; }
+
+  let count = 0;
   for (const date of selDates) {
-    try {
-      const { flights, bookingUrl } = await fetchNaverFlights(date, adults, children);
-      results[date] = flights;
-      totalAvail += flights.filter(f => f.available).length;
-      renderDateSection(date, flights, bookingUrl);
-    } catch(e) {
-      results[date] = [];
-      const sec = document.getElementById(`sec_${date}`);
-      if (sec) {
-        const naverUrl = `https://flight.naver.com/flights/domestic/GMP-CJU-${date}?adult=${adults}&child=${children}&infant=0`;
-        sec.querySelector('.loading-msg, .no-flights, .date-section > div:last-child').outerHTML =
-          `<div class="no-flights">조회 실패: ${e.message}<a href="${naverUrl}" target="_blank">네이버 항공권에서 직접 확인 →</a></div>`;
-      }
+    const airlines = getAirlines(date, adults, children);
+    for (const a of airlines) {
+      setTimeout(() => window.open(a.url, '_blank'), count * 300);
+      count++;
     }
   }
-
-  const now = new Date().toLocaleString('ko-KR', {timeZone:'Asia/Seoul'});
-  document.getElementById('updatedAt').textContent = now;
-  document.getElementById('statusDot').innerHTML = '<span class="dot"></span>완료';
-
-  const ta = document.getElementById('totalAvail');
-  if (totalAvail > 0) { ta.textContent = `🎉 총 잔여석 ${totalAvail}편`; ta.style.display = 'inline'; }
-  else ta.style.display = 'none';
-
-  checkNewAvail();
+  render();
 }
-
-function renderDateSection(date, flights, bookingUrl) {
-  const avail = flights.filter(f => f.available).length;
-  const naverUrl = bookingUrl || `https://flight.naver.com/flights/domestic/GMP-CJU-${date}`;
-
-  let content = '';
-  if (!flights.length) {
-    content = `<div class="no-flights">항공편 없음 또는 데이터를 불러오지 못했어요.<a href="${naverUrl}" target="_blank">네이버 항공권에서 직접 확인 →</a></div>`;
-  } else {
-    content = flights.map(f => {
-      const logoClass = `logo-${f.airline}` in document.styleSheets[0] ? `logo-${f.airline}` : 'logo-default';
-      const sc = !f.available ? 'none' : f.seats <= 3 ? 'few' : 'ok';
-      const seatLabel = !f.available ? '매진' : f.seats > 0 ? `${f.seats}석` : '잔여있음';
-      return `<div class="flight-card ${f.available?'avail':'sold'}" onclick="window.open('${f.bookingUrl}','_blank')">
-        <div class="airline-logo logo-${f.airline} logo-default">${f.airline}</div>
-        <div class="flight-info">
-          <div class="flight-route">${f.depTime||'--:--'}<span>→</span>${f.arrTime||'--:--'}</div>
-          <div class="flight-meta">${f.airlineName} ${f.flightNo}</div>
-        </div>
-        <div class="flight-right">
-          ${f.price ? `<div class="flight-price">₩${Number(f.price).toLocaleString()}<small>/인</small></div>` : ''}
-          <div class="avail-badge seat-${sc}">${f.available?'<span class="avail-dot-sm"></span>':''}${seatLabel}</div>
-        </div>
-      </div>`;
-    }).join('');
-  }
-
-  // 섹션이 있으면 업데이트, 없으면 추가
-  let sec = document.getElementById(`sec_${date}`);
-  if (!sec) {
-    sec = document.createElement('div');
-    sec.className = 'date-section';
-    sec.id = `sec_${date}`;
-    document.getElementById('main').appendChild(sec);
-  }
-  sec.innerHTML = `
-    <div class="date-header">
-      <h2>📅 ${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6)}</h2>
-      ${avail > 0 ? `<div class="date-avail">✅ 잔여 ${avail}편</div>` : ''}
-    </div>
-    ${content}`;
-}
-
-function checkNewAvail() {
-  const keys = new Set(), newOnes = [];
-  Object.entries(results).forEach(([date, flights]) => {
-    (flights||[]).filter(f=>f.available).forEach(f => {
-      const k = `${f.airline}-${f.flightNo}-${date}`;
-      keys.add(k);
-      if (!prevKeys.has(k)) newOnes.push(`${f.airlineName} ${f.flightNo} ${f.depTime}`);
-    });
-  });
-  if (newOnes.length && Notification.permission === 'granted') {
-    new Notification('✈️ 잔여석 발견!', {body: newOnes.join('\n')}); beep();
-  }
-  prevKeys = keys; localStorage.setItem('availKeys', JSON.stringify([...keys]));
-}
-
-function beep() {
-  try { const ac=new(window.AudioContext||window.webkitAudioContext)();[523,659,784].forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.frequency.value=f;o.type='sine';const t=ac.currentTime+i*.15;g.gain.setValueAtTime(.3,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);}); } catch(e) {}
-}
-function requestNotif() { Notification.requestPermission().then(p=>alert(p==='granted'?'✅ 알림 허용됨!':'알림 거부됨')); }
 </script>
 </body>
 </html>
