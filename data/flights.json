@@ -1,40 +1,19 @@
 {
-  "updatedAt": "2026-05-02 23:34:29",
+  "updatedAt": "2026-05-03 00:29:14",
   "targetDates": [
-    "20260503",
     "20260504",
     "20260505",
     "20260506",
     "20260507",
     "20260508",
-    "20260509"
+    "20260509",
+    "20260510"
   ],
   "adultCount": 1,
   "childCount": 0,
   "depTimeFrom": "0000",
   "depTimeTo": "2359",
   "results": [
-    {
-      "airline": "jinair",
-      "name": "진에어",
-      "date": "20260503",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
-      "flights": []
-    },
-    {
-      "airline": "jejuair",
-      "name": "제주항공",
-      "date": "20260503",
-      "flights": []
-    },
-    {
-      "airline": "tway",
-      "name": "티웨이",
-      "date": "20260503",
-      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260503&paxType=ADT&paxCount=1",
-      "flights": [],
-      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260503&paxType=ADT&paxCount=1"
-    },
     {
       "airline": "jinair",
       "name": "진에어",
@@ -160,6 +139,27 @@
       "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260509&paxType=ADT&paxCount=1",
       "flights": [],
       "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260509&paxType=ADT&paxCount=1"
+    },
+    {
+      "airline": "jinair",
+      "name": "진에어",
+      "date": "20260510",
+      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "flights": []
+    },
+    {
+      "airline": "jejuair",
+      "name": "제주항공",
+      "date": "20260510",
+      "flights": []
+    },
+    {
+      "airline": "tway",
+      "name": "티웨이",
+      "date": "20260510",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260510&paxType=ADT&paxCount=1",
+      "flights": [],
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260510&paxType=ADT&paxCount=1"
     }
   ]
 }
