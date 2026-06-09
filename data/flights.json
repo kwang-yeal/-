@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-09 17:55:53",
+  "updatedAt": "2026-06-09 21:07:46",
   "targetDates": [
     "20260610",
     "20260611",
@@ -25,7 +25,6 @@
       "airline": "jejuair",
       "name": "제주항공",
       "date": "20260610",
-      "error": "403 Client Error: Forbidden for url: https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260610&paxType=ADT&paxCount=1",
       "flights": []
     },
     {
@@ -47,7 +46,6 @@
       "airline": "jejuair",
       "name": "제주항공",
       "date": "20260611",
-      "error": "403 Client Error: Forbidden for url: https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260611&paxType=ADT&paxCount=1",
       "flights": []
     },
     {
@@ -69,7 +67,6 @@
       "airline": "jejuair",
       "name": "제주항공",
       "date": "20260612",
-      "error": "403 Client Error: Forbidden for url: https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260612&paxType=ADT&paxCount=1",
       "flights": []
     },
     {
@@ -91,7 +88,6 @@
       "airline": "jejuair",
       "name": "제주항공",
       "date": "20260613",
-      "error": "403 Client Error: Forbidden for url: https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260613&paxType=ADT&paxCount=1",
       "flights": []
     },
     {
@@ -113,7 +109,6 @@
       "airline": "jejuair",
       "name": "제주항공",
       "date": "20260614",
-      "error": "403 Client Error: Forbidden for url: https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260614&paxType=ADT&paxCount=1",
       "flights": []
     },
     {
@@ -135,7 +130,6 @@
       "airline": "jejuair",
       "name": "제주항공",
       "date": "20260615",
-      "error": "403 Client Error: Forbidden for url: https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260615&paxType=ADT&paxCount=1",
       "flights": []
     },
     {
@@ -157,7 +151,6 @@
       "airline": "jejuair",
       "name": "제주항공",
       "date": "20260616",
-      "error": "403 Client Error: Forbidden for url: https://www.jejuair.net/ko/ibe/booking/selectSchedule.do?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260616&paxType=ADT&paxCount=1",
       "flights": []
     },
     {
