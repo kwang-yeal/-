@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-12 01:12:52",
+  "updatedAt": "2026-07-12 02:17:44",
   "targetDates": [
     "20260713",
     "20260714",
@@ -18,7 +18,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20260713",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "Expecting value: line 1 column 1 (char 0)",
       "flights": []
     },
     {
@@ -39,7 +39,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20260714",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "Expecting value: line 1 column 1 (char 0)",
       "flights": []
     },
     {
@@ -60,7 +60,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20260715",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "Expecting value: line 1 column 1 (char 0)",
       "flights": []
     },
     {
@@ -81,7 +81,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20260716",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "Expecting value: line 1 column 1 (char 0)",
       "flights": []
     },
     {
@@ -102,7 +102,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20260717",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "Expecting value: line 1 column 1 (char 0)",
       "flights": []
     },
     {
@@ -123,7 +123,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20260718",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "Expecting value: line 1 column 1 (char 0)",
       "flights": []
     },
     {
@@ -144,7 +144,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20260719",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "Expecting value: line 1 column 1 (char 0)",
       "flights": []
     },
     {
