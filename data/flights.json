@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22 19:54:37",
+  "updatedAt": "2026-07-22 21:24:58",
   "targetDates": [
     "20260723",
     "20260724",
@@ -46,7 +46,6 @@
       "airline": "jejuair",
       "name": "제주항공",
       "date": "20260724",
-      "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "flights": []
     },
     {
