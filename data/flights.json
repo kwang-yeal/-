@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10 00:09:43",
+  "updatedAt": "2026-09-10 03:36:56",
   "targetDates": [
     "20260911",
     "20260912",
@@ -31,9 +31,9 @@
       "airline": "tway",
       "name": "티웨이",
       "date": "20260911",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260911&paxType=ADT&paxCount=1",
       "flights": [],
-      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260911&paxType=ADT&paxCount=1",
-      "note": "티웨이는 예매 페이지에서 직접 확인해주세요."
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260911&paxType=ADT&paxCount=1"
     },
     {
       "airline": "jinair",
@@ -52,9 +52,9 @@
       "airline": "tway",
       "name": "티웨이",
       "date": "20260912",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260912&paxType=ADT&paxCount=1",
       "flights": [],
-      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260912&paxType=ADT&paxCount=1",
-      "note": "티웨이는 예매 페이지에서 직접 확인해주세요."
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260912&paxType=ADT&paxCount=1"
     },
     {
       "airline": "jinair",
@@ -73,9 +73,9 @@
       "airline": "tway",
       "name": "티웨이",
       "date": "20260913",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260913&paxType=ADT&paxCount=1",
       "flights": [],
-      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260913&paxType=ADT&paxCount=1",
-      "note": "티웨이는 예매 페이지에서 직접 확인해주세요."
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260913&paxType=ADT&paxCount=1"
     },
     {
       "airline": "jinair",
@@ -94,9 +94,9 @@
       "airline": "tway",
       "name": "티웨이",
       "date": "20260914",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260914&paxType=ADT&paxCount=1",
       "flights": [],
-      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260914&paxType=ADT&paxCount=1",
-      "note": "티웨이는 예매 페이지에서 직접 확인해주세요."
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260914&paxType=ADT&paxCount=1"
     },
     {
       "airline": "jinair",
@@ -115,9 +115,9 @@
       "airline": "tway",
       "name": "티웨이",
       "date": "20260915",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260915&paxType=ADT&paxCount=1",
       "flights": [],
-      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260915&paxType=ADT&paxCount=1",
-      "note": "티웨이는 예매 페이지에서 직접 확인해주세요."
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260915&paxType=ADT&paxCount=1"
     },
     {
       "airline": "jinair",
@@ -136,9 +136,9 @@
       "airline": "tway",
       "name": "티웨이",
       "date": "20260916",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260916&paxType=ADT&paxCount=1",
       "flights": [],
-      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260916&paxType=ADT&paxCount=1",
-      "note": "티웨이는 예매 페이지에서 직접 확인해주세요."
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260916&paxType=ADT&paxCount=1"
     },
     {
       "airline": "jinair",
@@ -157,9 +157,9 @@
       "airline": "tway",
       "name": "티웨이",
       "date": "20260917",
+      "error": "403 Client Error: Forbidden for url: https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260917&paxType=ADT&paxCount=1",
       "flights": [],
-      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260917&paxType=ADT&paxCount=1",
-      "note": "티웨이는 예매 페이지에서 직접 확인해주세요."
+      "fallbackUrl": "https://www.twayair.com/app/booking/chooseItinerary?tripType=OW&depAirport=GMP&arrAirport=CJU&depDate=20260917&paxType=ADT&paxCount=1"
     }
   ]
 }
