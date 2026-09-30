@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30 11:09:40",
+  "updatedAt": "2026-09-30 17:34:36",
   "targetDates": [
     "20261001",
     "20261002",
@@ -18,7 +18,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20261001",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "417 Client Error: Expectation Failed for url: https://www.jinair.com/booking/getAirAvailabilityJson",
       "flights": []
     },
     {
@@ -39,7 +39,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20261002",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "417 Client Error: Expectation Failed for url: https://www.jinair.com/booking/getAirAvailabilityJson",
       "flights": []
     },
     {
@@ -60,7 +60,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20261003",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "417 Client Error: Expectation Failed for url: https://www.jinair.com/booking/getAirAvailabilityJson",
       "flights": []
     },
     {
@@ -81,7 +81,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20261004",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "417 Client Error: Expectation Failed for url: https://www.jinair.com/booking/getAirAvailabilityJson",
       "flights": []
     },
     {
@@ -102,7 +102,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20261005",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "417 Client Error: Expectation Failed for url: https://www.jinair.com/booking/getAirAvailabilityJson",
       "flights": []
     },
     {
@@ -123,7 +123,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20261006",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "417 Client Error: Expectation Failed for url: https://www.jinair.com/booking/getAirAvailabilityJson",
       "flights": []
     },
     {
@@ -144,7 +144,7 @@
       "airline": "jinair",
       "name": "진에어",
       "date": "20261007",
-      "error": "403 Client Error: Forbidden for url: https://www.jinair.com/booking/getAirAvailabilityJson",
+      "error": "417 Client Error: Expectation Failed for url: https://www.jinair.com/booking/getAirAvailabilityJson",
       "flights": []
     },
     {
